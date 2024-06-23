@@ -1,0 +1,57 @@
+.character-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.character-search input {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.letter-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.letter-button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.letter-button.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.letter-button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.clear-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.clear-button:hover {
+  background-color: #e0e0e0;
+}
