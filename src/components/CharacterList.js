@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import CharacterSearch from "./CharacterSearch";
 import "./CharacterList.css";
 
@@ -12,11 +11,18 @@ const CharacterList = () => {
   useEffect(() => {
     const fetchCharacters = async () => {
       try {
-        const response = await axios.get(
+        const response = await fetch(
           "https://dragon-age-api.fly.dev/api/v1/characters?perPage=1000"
         );
-        if (response.data && Array.isArray(response.data)) {
-          const sortedCharacters = response.data.sort((a, b) =>
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data && Array.isArray(data)) {
+          const sortedCharacters = data.sort((a, b) =>
             a.name.localeCompare(b.name)
           );
           setCharacters(sortedCharacters);
